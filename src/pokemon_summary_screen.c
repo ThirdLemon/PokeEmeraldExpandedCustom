@@ -2323,14 +2323,10 @@ static void Task_HandleReplaceMoveInput(u8 taskId)
     }
 }
 
+//Set it so all moves can be replaced, including HMs. Left in the code incase there is some case I don't want a move removed at a later date.
 static bool8 CanReplaceMove(void)
 {
-    if (sMonSummaryScreen->firstMoveIndex == MAX_MON_MOVES
-        || sMonSummaryScreen->newMove == MOVE_NONE
-        || IsMoveHm(sMonSummaryScreen->summary.moves[sMonSummaryScreen->firstMoveIndex]) != TRUE)
-        return TRUE;
-    else
-        return FALSE;
+    return TRUE;
 }
 
 static void ShowCantForgetHMsWindow(u8 taskId)

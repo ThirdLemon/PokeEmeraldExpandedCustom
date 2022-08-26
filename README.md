@@ -1,5 +1,9 @@
 # pokeemerald Expansion
 
+## What is this fork?
+
+This fork is a personal project for me, by me. All other details in this readme are pulled directly from the original branch of pokeemerald expansion. 
+
 ## What is the pokeemerald Expansion?
 
 The pokeemerald Expansion is a collection of feature branches that can be integrated into existing [pokeemerald](https://github.com/pret/pokeemerald) projects.

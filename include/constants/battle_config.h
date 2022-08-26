@@ -98,7 +98,7 @@
 
 // Ability settings
 #define B_EXPANDED_ABILITY_NAMES    TRUE  // If TRUE, ability names are increased from 12 characters to 16 characters.
-#define B_ABILITY_WEATHER           GEN_7 // In Gen6+, ability-induced weather lasts 5 turns. Before, it lasted until the battle ended or until it was changed by a move or a different weather-affecting ability.
+#define B_ABILITY_WEATHER           GEN_5 // In Gen6+, ability-induced weather lasts 5 turns. Before, it lasted until the battle ended or until it was changed by a move or a different weather-affecting ability.
 #define B_GALE_WINGS                GEN_7 // In Gen7+ requires full HP to trigger.
 #define B_STANCE_CHANGE_FAIL        GEN_7 // In Gen7+, Stance Change fails if the Pokémon is unable to use a move because of confusion, paralysis, etc. In Gen6, it doesn't.
 #define B_SHADOW_TAG_ESCAPE         GEN_7 // In Gen4+, if both sides have a Pokémon with Shadow Tag, all battlers can escape. Before, neither side could escape this situation.
@@ -156,7 +156,7 @@
 
 // Interface settings
 #define B_ABILITY_POP_UP            TRUE  // In Gen5+, the Pokémon abilities are displayed in a pop-up, when they activate in battle.
-#define B_FAST_INTRO                TRUE  // If set to TRUE, battle intro texts print at the same time as animation of a Pokémon, as opposing to waiting for the animation to end.
+#define B_FAST_INTRO                FALSE // If set to TRUE, battle intro texts print at the same time as animation of a Pokémon, as opposing to waiting for the animation to end.
 #define B_FAST_HP_DRAIN             TRUE  // If set to TRUE, HP bars will move faster to accomodate higher max HP amounts.
 #define B_SHOW_TARGETS              TRUE  // If set to TRUE, all available targets, for moves hitting 2 or 3 Pokémon, will be shown before selecting a move.
 #define B_SHOW_SPLIT_ICON           TRUE  // If set to TRUE, it will show an icon in the summary showing the move's category split.
