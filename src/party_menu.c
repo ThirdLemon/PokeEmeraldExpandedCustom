@@ -5654,6 +5654,11 @@ void TryItemHoldFormChange(struct Pokemon *mon)
     }
 }
 
+void ItemUseCB_Pokerider(u8 taskId, TaskFunc task)
+{
+    
+}
+
 #undef tState
 #undef tTargetSpecies
 #undef tAnimWait

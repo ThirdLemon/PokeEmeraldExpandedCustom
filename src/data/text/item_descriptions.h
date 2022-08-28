@@ -3792,3 +3792,8 @@ static const u8 sSapphireDesc[] = _(
     "A brilliant blue gem\n"
     "that symbolizes\n"
     "honesty.");
+
+static const u8 sPokeriderDesc[] = _(
+    "A tool that can call\n"
+    "a ride pokemon to\n"
+    "replace HM02.");

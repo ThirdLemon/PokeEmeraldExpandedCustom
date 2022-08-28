@@ -1193,6 +1193,12 @@ void ItemUseOutOfBattle_FormChange_ConsumedOnUse(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_Pokerider(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_Pokerider;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_CannotUse(u8 taskId)
 {
     DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);

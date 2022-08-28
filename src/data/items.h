@@ -10078,4 +10078,17 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
     },
+
+    [ITEM_POKERIDER] =
+    {
+        .name = _("Pokerider"),
+        .itemId = ITEM_POKERIDER,
+        .price = 0,
+        .description = sPokeriderDesc,
+        .importance = 1,
+        .registrability = TRUE,
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Pokerider,
+    },
 };
