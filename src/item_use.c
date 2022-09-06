@@ -1195,8 +1195,15 @@ void ItemUseOutOfBattle_FormChange_ConsumedOnUse(u8 taskId)
 
 void ItemUseOutOfBattle_Pokerider(u8 taskId)
 {
-    gItemUseCB = ItemUseCB_Pokerider;
-    SetUpItemUseCallback(taskId);
+    if(Overworld_MapTypeAllowsTeleportAndFly(gMapHeader.mapType) == TRUE)
+    {
+        gItemUseCB = ItemUseCB_Pokerider;
+        SetUpItemUseCallback(taskId);
+    }
+    else
+    {
+        DisplayDadsAdviceCannotUseItemMessage(taskId, gTasks[taskId].tUsingRegisteredKeyItem);
+    }
 }
 
 void ItemUseOutOfBattle_CannotUse(u8 taskId)
