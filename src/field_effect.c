@@ -1915,7 +1915,8 @@ static bool8 DiveFieldEffect_Init(struct Task *task)
 static bool8 DiveFieldEffect_ShowMon(struct Task *task)
 {
     LockPlayerFieldControls();
-    gFieldEffectArguments[0] = task->data[15];
+    //gFieldEffectArguments[0] = task->data[15];
+    gFieldEffectArguments[0] = FLDEFF_MON_ANIM_DIVE;
     FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
     task->data[0]++;
     return FALSE;
@@ -2573,12 +2574,29 @@ bool8 FldEff_FieldMoveShowMonInit(void)
     struct Pokemon *pokemon;
     bool32 noDucking = gFieldEffectArguments[0] & SHOW_MON_CRY_NO_DUCKING;
     pokemon = &gPlayerParty[(u8)gFieldEffectArguments[0]];
+    //gFieldEffectArguments[0] = GetMonData(pokemon, MON_DATA_SPECIES);
+    //gFieldEffectArguments[1] = GetMonData(pokemon, MON_DATA_OT_ID);
+    //gFieldEffectArguments[2] = GetMonData(pokemon, MON_DATA_PERSONALITY);
+    gFieldEffectArguments[1] = 0;
+    gFieldEffectArguments[2] = 0;
+    //gFieldEffectArguments[0] |= noDucking;
+    FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON);
+    FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+    return FALSE;
+}
+
+//This is a copy of the old version of fieldmoveshowmoninit, which loads the sprite based on the user, instead of basing the sprite on a preset mon.
+bool8 FldEff_OldFieldMoveShowMonInit(void)
+{
+    struct Pokemon *pokemon;
+    bool32 noDucking = gFieldEffectArguments[0] & SHOW_MON_CRY_NO_DUCKING;
+    pokemon = &gPlayerParty[(u8)gFieldEffectArguments[0]];
     gFieldEffectArguments[0] = GetMonData(pokemon, MON_DATA_SPECIES);
     gFieldEffectArguments[1] = GetMonData(pokemon, MON_DATA_OT_ID);
     gFieldEffectArguments[2] = GetMonData(pokemon, MON_DATA_PERSONALITY);
     gFieldEffectArguments[0] |= noDucking;
     FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON);
-    FieldEffectActiveListRemove(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+    FieldEffectActiveListRemove(FLDEFF_OLD_FIELD_MOVE_SHOW_MON_INIT);
     return FALSE;
 }
 
@@ -3192,7 +3210,7 @@ static void FlyOutFieldEffect_ShowMon(struct Task *task)
     {
         task->tState++;
         gFieldEffectArguments[0] = task->tMonId;
-        FieldEffectStart(FLDEFF_FIELD_MOVE_SHOW_MON_INIT);
+        FieldEffectStart(FLDEFF_OLD_FIELD_MOVE_SHOW_MON_INIT);
     }
 }
 
